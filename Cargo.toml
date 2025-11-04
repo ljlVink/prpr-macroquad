@@ -11,7 +11,7 @@ Simple and easy to use graphics library
 """
 readme="README.md"
 
-[features]
+[target.'cfg(not(target_env = "ohos"))'.features]
 audio = ["quad-snd"]
 log-rs = ["log"]
 default = ["audio"]
@@ -27,7 +27,7 @@ all-features = true
 
 [dependencies]
 # miniquad = { version = "=0.3.14", features = ["log-impl"] }
-miniquad = { git = "https://github.com/Mivik/prpr-miniquad.git", features = ["log-impl"] }
+miniquad = { path = "../prpr-miniquad", features = ["log-impl"] }
 quad-rand = "0.2.3"
 glam = {version = "0.30", features = ["scalar-math"] }
 image = { version = "0.25", default-features = false, features = ["png", "tga"] }
